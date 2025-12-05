@@ -82,7 +82,11 @@ This plugin provides a comprehensive suite of tools and actions to interact with
 - **`increasePosition`**: Increase a position on Ranger.
 - **`withdrawBalance`**: Withdraw balance from Ranger.
 - **`withdrawCollateral`**: Withdraw collateral from Ranger.
+### PumpFun
+- **`addLiquidity`**: Add liquidity to a PumpFun AMM pool (supports SOL or Base token input).
+- **`removeLiquidity`**: Remove liquidity from a PumpFun AMM pool.
 
+### Raydium
 ### Raydium
 - **`raydiumCreateAmmV4`**: Create an AMM v4 on Raydium.
 - **`raydiumCreateClmm`**: Create a CLMM on Raydium.
