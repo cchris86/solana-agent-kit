@@ -84,6 +84,11 @@ import raydiumCreateClmmAction from "./raydium/actions/raydiumCreateClmm";
 import raydiumCreateCpmmAction from "./raydium/actions/raydiumCreateCpmm";
 import raydiumCreateLaunchlabTokenAction from "./raydium/actions/raydiumCreateLaunchlabToken";
 
+// Import Pumpfun actions
+import addLiquidityWithQuoteAction from "./pumpfunAmm/actions/addLiquidityWithQuote";
+import addLiquidityWithBaseAction from "./pumpfunAmm/actions/addLiquidityWithBase";
+import removeLiquidityAction from "./pumpfunAmm/actions/removeLiquidity";
+
 // Import Solayer actions
 import stakeWithSolayerAction from "./solayer/actions/stakeWithSolayer";
 
@@ -137,6 +142,9 @@ import {
   raydiumCreateCpmm,
   raydiumCreateLaunchlabToken,
 } from "./raydium";
+
+// Import Pumpfun tools
+import { addLiquidityWithQuote, addLiquidityWithBase, removeLiquidity } from "./pumpfunAmm/tools";
 
 // Import Solayer tools
 import { stakeWithSolayer } from "./solayer/tools";
@@ -259,6 +267,11 @@ const DefiPlugin = {
     raydiumCreateCpmm,
     raydiumCreateLaunchlabToken,
 
+    // Pumpfun methods
+    addLiquidityWithQuote,
+    addLiquidityWithBase,
+    removeLiquidity,
+
     // Solayer methods
     stakeWithSolayer,
 
@@ -365,6 +378,11 @@ const DefiPlugin = {
     raydiumCreateClmmAction,
     raydiumCreateCpmmAction,
     raydiumCreateLaunchlabTokenAction,
+
+    // Pumpfun actions
+    addLiquidityWithQuoteAction,
+    addLiquidityWithBaseAction,
+    removeLiquidityAction,
 
     // Solayer actions
     stakeWithSolayerAction,
