@@ -4,8 +4,11 @@ import { type Action, SolanaAgentKit } from "solana-agent-kit";
 import { z } from "zod";
 
 // Define the raw shape type that MCP tools expect
+type MinimalZodSchema =
+  Pick<z.ZodTypeAny, "parse" | "optional" | "_def">;
+
 export type MCPSchemaShape = {
-  [key: string]: z.ZodType<any>;
+  [key: string]: MinimalZodSchema;
 };
 
 // Type guards for Zod schema types
@@ -34,11 +37,11 @@ export function zodToMCPShape(schema: z.ZodTypeAny): {
     throw new Error("MCP tools require an object schema at the top level");
   }
 
-  const shape = schema.shape;
+  const shape: Record<string, z.ZodTypeAny> = schema.shape;
   const result: MCPSchemaShape = {};
 
   for (const [key, value] of Object.entries(shape)) {
-    result[key] = isZodOptional(value as any) ? (value as any).unwrap() : value;
+    result[key] = isZodOptional(value) ? value.unwrap() : value;
   }
 
   return {
