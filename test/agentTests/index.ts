@@ -1,14 +1,16 @@
 import type { SolanaAgentKit } from "solana-agent-kit";
 import { chooseAgent } from "../utils";
+import claudeAITests from "./claude";
 import langchainAITests from "./langchain";
-import vercelAITests from "./vercel-ai";
 import openAITests from "./openai";
+import vercelAITests from "./vercel-ai";
 
 export default async function aiTests(agentKit: SolanaAgentKit) {
   const agent = await chooseAgent([
     "vercel-ai",
     "langchain",
     "openai",
+    "claude",
   ] as const);
 
   switch (agent) {
@@ -20,6 +22,9 @@ export default async function aiTests(agentKit: SolanaAgentKit) {
       break;
     case "openai":
       await openAITests(agentKit);
+      break;
+    case "claude":
+      await claudeAITests(agentKit);
       break;
   }
 }
