@@ -22,6 +22,20 @@ import getAssetsByOwnerAction from "./helius/actions/getAssetsbyOwner";
 import getWebhookAction from "./helius/actions/getWebhook";
 import parseSolanaTransactionAction from "./helius/actions/parseTransaction";
 
+// alchemy
+import alchemyCreateWebhookAction from "./alchemy/actions/createWebhook";
+import alchemyDeleteWebhookAction from "./alchemy/actions/deleteWebhook";
+import alchemyGetEndpointInfoAction from "./alchemy/actions/getEndpointInfo";
+import alchemyGetHistoricalTokenPricesAction from "./alchemy/actions/getHistoricalTokenPrices";
+import alchemyGetPortfolioTokensAction from "./alchemy/actions/getPortfolioTokens";
+import alchemyGetPriorityFeeEstimateAction from "./alchemy/actions/getPriorityFeeEstimate";
+import alchemyGetTokenPricesByAddressAction from "./alchemy/actions/getTokenPricesByAddress";
+import alchemyGetTokenPricesBySymbolAction from "./alchemy/actions/getTokenPricesBySymbol";
+import alchemyListWebhooksAction from "./alchemy/actions/listWebhooks";
+import alchemyReplaceWebhookAddressesAction from "./alchemy/actions/replaceWebhookAddresses";
+import alchemySolanaRpcRequestAction from "./alchemy/actions/rpcRequest";
+import alchemyUpdateWebhookAddressesAction from "./alchemy/actions/updateWebhookAddresses";
+
 import getAllRegisteredAllDomainsAction from "./sns/actions/getAllRegisteredAllDomains";
 import getMainAllDomainsDomainAction from "./sns/actions/getMainAllDomainsDomain";
 import getPrimaryDomainAction from "./sns/actions/getPrimaryDomain";
@@ -67,6 +81,26 @@ import parseInstructionAction from "./solanafm/actions/parseInstruction";
 // messari
 import getMessariAiAction from "./messari/actions/askMessariAi";
 
+import {
+  alchemyCreateAddressActivityWebhook,
+  alchemyCreateWebhook,
+  alchemyDeleteWebhook,
+  alchemyGetHistoricalTokenPrices,
+  alchemyGetPortfolioTokens,
+  alchemyGetPriorityFeeEstimate,
+  alchemyGetTokenPricesByAddress,
+  alchemyGetTokenPricesBySymbol,
+  alchemyListWebhooks,
+  alchemyReplaceWebhookAddresses,
+  alchemySolanaRpcRequest,
+  alchemyUpdateWebhookAddresses,
+  alchemyVerifyWebhookSignature,
+  getAlchemySolanaEndpointInfo,
+  getAlchemySolanaGrpcUrl,
+  getAlchemySolanaRpcUrl,
+  getAlchemySolanaWsUrl,
+  getAlchemyX402SolanaRpcUrl,
+} from "./alchemy/tools";
 // Import all tools
 import {
   getAllDomainsTLDs,
@@ -198,6 +232,24 @@ const MiscPlugin = {
     getAssetsByOwner,
     getHeliusWebhook,
     parseTransaction,
+    alchemySolanaRpcRequest,
+    alchemyGetPriorityFeeEstimate,
+    alchemyGetTokenPricesBySymbol,
+    alchemyGetTokenPricesByAddress,
+    alchemyGetHistoricalTokenPrices,
+    alchemyGetPortfolioTokens,
+    alchemyCreateWebhook,
+    alchemyCreateAddressActivityWebhook,
+    alchemyDeleteWebhook,
+    alchemyListWebhooks,
+    alchemyUpdateWebhookAddresses,
+    alchemyReplaceWebhookAddresses,
+    alchemyVerifyWebhookSignature,
+    getAlchemySolanaRpcUrl,
+    getAlchemySolanaWsUrl,
+    getAlchemySolanaGrpcUrl,
+    getAlchemyX402SolanaRpcUrl,
+    getAlchemySolanaEndpointInfo,
     resolveSolDomain,
     registerDomain,
     getAllRegisteredAllDomains,
@@ -265,6 +317,18 @@ const MiscPlugin = {
     getAssetsByOwnerAction,
     getWebhookAction,
     parseSolanaTransactionAction,
+    alchemyGetEndpointInfoAction,
+    alchemySolanaRpcRequestAction,
+    alchemyGetPriorityFeeEstimateAction,
+    alchemyGetTokenPricesBySymbolAction,
+    alchemyGetTokenPricesByAddressAction,
+    alchemyGetHistoricalTokenPricesAction,
+    alchemyGetPortfolioTokensAction,
+    alchemyCreateWebhookAction,
+    alchemyDeleteWebhookAction,
+    alchemyListWebhooksAction,
+    alchemyUpdateWebhookAddressesAction,
+    alchemyReplaceWebhookAddressesAction,
     resolveSolDomainAction,
     registerDomainAction,
     getPrimaryDomainAction,
